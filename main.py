@@ -70,8 +70,8 @@ def eval(model, test_graph, sku_info):
 
     fpr, tpr, thresholds = metrics.roc_curve(labels, preds, pos_label=1)
 
-    print("Evaluate link prediction AUC: {:.4f}".format(metrics.auc(fpr, tpr)))
-
+    print("AUC: {:.4f}".format(metrics.auc(fpr, tpr)))
+    print('Recall: {:.4f}'.format(tpr.mean()))
 
 if __name__ == "__main__":
     args = utils.init_args()
